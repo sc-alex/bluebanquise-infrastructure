@@ -57,15 +57,16 @@ source $root_directory/parameters.conf
 
 install_go() {
 
+  go_version="go1.27.3"
   if [ $distribution_architecture == 'x86_64' ]; then
-    wget https://go.dev/dl/go1.26.3.linux-amd64.tar.gz
-    tar -C /usr/local -xzvf go1.26.3.linux-amd64.tar.gz
-    rm go1.26.3.linux-amd64.tar.gz
+    wget "https://go.dev/dl/${go_version}.linux-amd64.tar.gz"
+    tar -C /usr/local -xzvf "${go_version}.linux-amd64.tar.gz"
+    rm "${go_version}.linux-amd64.tar.gz"
   fi
   if [ $distribution_architecture == 'aarch64' ]; then
-    wget https://go.dev/dl/go1.26.3.linux-arm64.tar.gz
-    tar -C /usr/local -xzvf go1.26.3.linux-arm64.tar.gz
-    rm go1.26.3.linux-arm64.tar.gz
+    wget "https://go.dev/dl/${go_version}.linux-arm64.tar.gz"
+    tar -C /usr/local -xzvf "${go_version}.linux-arm64.tar.gz"
+    rm "${go_version}.linux-arm64.tar.gz"
   fi
 
 }
